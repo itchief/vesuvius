@@ -10,7 +10,7 @@ use LogicException;
 use Throwable;
 
 /**
- * Создание класса Connection
+ * Represents a connection between PHP and a database server.
  */
 class Connection
 {
