@@ -25,7 +25,6 @@ try {
         print_r($row);
         echo '</pre>';
     }
-
 } catch (PDOException $e) {
     echo $e;
 }
