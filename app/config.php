@@ -11,7 +11,7 @@ return [
         'collation' => 'utf8mb4_unicode_ci',
         'options' => [
             PDO::ATTR_PERSISTENT => true,
-            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"
+            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4'
         ]
     ],
 ];

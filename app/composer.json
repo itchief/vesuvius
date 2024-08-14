@@ -1,18 +1,21 @@
 {
-    "name": "itchief/vesuvius",
-    "license": "MIT",
-    "version": "1.0.0",
-    "description": "The Vesuvius project",
-    "authors": [
-      {
-        "name": "Alexander Maltsev",
-        "email": "alexander@itchief.ru"
-      }
-    ],
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/"
-        }
-    },
-    "require": {}
+  "name": "itchief/vesuvius",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "The Vesuvius project",
+  "authors": [
+    {
+      "name": "Alexander Maltsev",
+      "email": "alexander@itchief.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "require": {
+    "ext-pdo": "*",
+    "slim/psr7": "^1.7"
+  }
 }
