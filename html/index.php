@@ -1,19 +1,25 @@
 <?php
 
-use App\Core\ResponseEmitter;
-
 use Slim\Psr7\Factory\ServerRequestFactory;
 use Slim\Psr7\Factory\StreamFactory;
 use Slim\Psr7\Factory\ResponseFactory;
+use App\Core\ResponseEmitter;
 
 require __DIR__ . '/../app/vendor/autoload.php';
 $config = require __DIR__ . '/../app/config.php';
 
+// создадим серверный запрос из суперглобальных массивов PHP
 $request = ServerRequestFactory::createFromGlobals();
-$response = (new ResponseFactory)->createResponse();
 
+// получим метод запроса
+// $method = $request->getMethod();
+// получим цель запроса
+// $path = $request->getUri()->getPath();
+
+// создадим тело как поток
 $body = (new StreamFactory)->createStream('Hello, world!');
-$response = $response->withBody($body);
+// создадим ответ, с кодом статуса 200 и телом $body
+$response = (new ResponseFactory)->createResponse(200)->withBody($body);
 
-$responseEmitter = new ResponseEmitter();
-$responseEmitter->emit($response);
+// выведем ответ
+(new ResponseEmitter())->emit($response);
